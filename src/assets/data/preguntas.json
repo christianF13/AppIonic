@@ -1,0 +1,17 @@
+[
+    {"pregunta":"¿Conoce que es competencia digital?",
+     "opcion1":"si",
+     "opcion2":"no",
+     "respuesta":1
+    },
+
+    {"pregunta":"¿Conoce de seguridad?",
+        "opcion1":"si",
+        "opcion2":"no",
+        "respuesta":2
+    }
+   
+
+
+ 
+]

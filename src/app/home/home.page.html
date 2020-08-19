@@ -1,0 +1,46 @@
+
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear"color="primary" (click)="Alerta()">
+      <ion-icon style="color: aliceblue;" name="information-circle-outline"></ion-icon>
+     
+      </ion-button>
+    <ion-title style="text-align: center;">Principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content  > 
+
+<ion-card>
+  <ng-template [ngIf]="isAdmin" >
+    <ion-button routerLink="/test" style="color: brown;"  class="ion-margin-top" type="submit" expand="block" >
+      <ion-icon  name="document-text-outline"></ion-icon> Subir Test  
+    </ion-button>
+  </ng-template>
+</ion-card>
+
+  <ion-card  style="color: #4174a0;"class="imagenes"> 
+      <img class="icon" src="assets/icon/img1.png" alt="">  
+      <ion-button  routerLink="/test" color="danger" class="ion-margin-top" type="submit" expand="block">
+        <ion-icon  name="document-text-outline"></ion-icon> Realizar Test          
+      </ion-button>  
+  </ion-card> 
+    <ion-card>
+      <img class="icon" src="assets/icon/img2.png" alt="">  
+      <ion-button color="danger" class="ion-margin-top" type="submit" expand="block">
+        <ion-icon name="search-circle-outline"></ion-icon>Resultados
+      
+      </ion-button>
+    </ion-card>
+
+</ion-content>
+
+
+ 

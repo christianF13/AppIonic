@@ -1,0 +1,53 @@
+ion-app{
+  .cls-5{
+    opacity: 0;
+    animation: 3s 0.6s ease fadeIn;
+    animation-fill-mode: forwards;
+  }
+  .cls-4{
+    opacity: 0;
+    animation: 3s 0.6s ease fadeInChange;
+    animation-fill-mode: forwards;
+    fill: #98d7d4;
+  }
+  .cls-5{
+    animation: 6s 0.9s ease fadeInCh;
+    animation-fill-mode: forwards;
+    fill: rgb(0, 0, 0);   
+  }
+  .cls-1{
+    opacity: 0;
+    animation: 3s 0.3s ease fadeIn;
+    animation-fill-mode: forwards;
+    fill: #4174a0;  
+  }
+
+@keyframes fadeIn {
+  100%{
+    opacity: 1;
+    
+  }
+
+}
+@keyframes fadeInCh {
+  100%{
+    opacity: 1;
+    stroke-dasharray: 300 ;
+    stroke-dashoffset: -444;
+    
+    stroke-width: 3px;
+    stroke: #f7a903;
+
+  }
+
+}
+
+@keyframes fadeInChange {
+  100%{
+    opacity: 1;
+    fill: #E8D6B2 ;
+    
+  }
+}
+
+}

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear" color="primary" (click)="Alerta()">
+      <ion-icon style="color: aliceblue;" name="information-circle-outline"></ion-icon>
+
+    </ion-button>
+    <ion-title style="text-align: center;">Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="padding: 1rem; " class="container" *ngIf="SerPreg.qns">
+    <div class="progreso" style="text-align: center; color:aliceblue ">
+      Progreso
+    </div>
+    <br>
+    <ion-progress-bar color="white" buffer="1" [style.width.%]="(SerPreg.qnProgress+1)*10 "
+      value="(SerPreg.qnProgress+1)*10"> </ion-progress-bar>
+
+    <div class="progress">
+      <div class="determinate" [style.width.%]="(SerPreg.qnProgress+1)*10"></div>
+    </div>
+    <br>
+    <ion-item-group style="text-align: center;" id="questions" class="justify-center flex-column">
+      <span class="card-title">{{SerPreg.qnProgress+1}}</span>
+      <h2>{{SerPreg.qns[SerPreg.qnProgress].pregunta}}</h2>
+      <ion-item class="choise-container"
+        *ngFor="let opciones of SerPreg.qns[SerPreg.qnProgress].opciones; let i = index">
+        <p class="answer" *ngIf="opciones !=null" (click)="Answer(SerPreg.qns[SerPreg.qnProgress].id,i)">
+          {{opciones}}
+        </p>
+      </ion-item>
+    </ion-item-group>
+  </div>
+
+
+</ion-content>

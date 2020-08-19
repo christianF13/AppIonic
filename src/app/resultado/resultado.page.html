@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear" color="primary" (click)="Alerta()">
+      <ion-icon style="color: aliceblue;" name="information-circle-outline"></ion-icon>
+
+    </ion-button>
+    <ion-title style="text-align: center;">Resultado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img class="icon" src="assets/icon/result.png" style="width: 100px; height: 100;">
+  <div class="card-content">
+    <ion-item>
+      <ion-label>
+        <h4>{{SerPreg}}</h4>
+        <h4>{{SerPregun.correctAnswerCount}}/10</h4>
+      </ion-label>
+    </ion-item>
+
+
+  </div>
+
+
+
+
+
+
+
+</ion-content>
