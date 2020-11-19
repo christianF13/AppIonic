@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear" color="primary" (click)="Alerta()">
+      <ion-icon style="color: aliceblue;" name="information-circle-outline"></ion-icon>
+
+    </ion-button>
+    <ion-title style="text-align: center;">Visualizar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="tabla" style="text-align: center;">
+    <ion-grid>
+      <ion-row class="tablaN">
+        <ion-col>
+          <b> Area</b>
+        </ion-col>
+        <ion-col>
+          <b>Nivel</b>
+        </ion-col>
+        <ion-col>
+          <b>Puntaje</b>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="areas">
+        <ion-col>
+          {{user.areaAL}}
+        </ion-col>
+        <ion-col>
+          {{user.nivelAl}}
+        </ion-col>
+        <ion-col>
+          {{user.resultAl}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="areas">
+        <ion-col>
+          {{user.areaCom}}
+        </ion-col>
+        <ion-col>
+          {{user.nivelCo}}
+        </ion-col>
+        <ion-col>
+          {{user.resultCo}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="areas">
+        <ion-col>
+          {{user.areaCre}}
+        </ion-col>
+        <ion-col>
+          {{user.nivelCre}}
+        </ion-col>
+        <ion-col>
+          {{user.resultCre}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="areas">
+        <ion-col>
+          {{user.areaSe}}
+        </ion-col>
+        <ion-col>
+          {{user.nivelSegu}}
+        </ion-col>
+        <ion-col>
+          {{user.resultSegu}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="areas">
+        <ion-col>
+          {{user.areaResul}}
+        </ion-col>
+        <ion-col>
+          {{user.nivelResol}}
+        </ion-col>
+        <ion-col>
+          {{user.resultResol}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-list>
+
+
+
+  <br>
+  <div class="prom" style="color: rgb(255, 230, 0)"> <b> Promedio general</b> </div>
+ 
+  <div class="prome" style="text-align: center;">
+    <div class="nivel">
+      <p><b>  {{SerPreg.nivele}}</b></p>
+    </div>
+
+    <div class="valor">
+      <p id="pro" class="p"> {{ (user.resultAl + user.resultCo + user.resultCre + user.resultSegu + user.resultResol)/5}}
+        / <b>10 </b> </p>
+    </div>
+   
+
+  </div>
+  <br>
+
+  <div style="text-align: center;">
+    <ion-button style="text-align: center;" routerLink="/home" color="secondary">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon> Regresar
+    </ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear"color="primary" (click)="Alerta()">
+      <ion-icon style="color: aliceblue;" name="information-circle-outline"></ion-icon>
+     
+      </ion-button>
+    <ion-title style="text-align: center;">Areas de Evaluacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <div  class="container" style="padding: 20px; ">
+    
+    <ion-button [disabled]="isDisabled" (click)="bAlfabetizacion(0)" [color]="myColor[0]" routerLink="/test" color="danger" class="btn" type="submit" expand="block">
+      <ion-icon name="school-outline"></ion-icon>  Alfabetizacion e Información         
+    </ion-button> 
+ 
+
+    <ion-button [disabled]="isDisabled2" (click)="bComunicacion(0)" [color]="myColorC[0]" routerLink="/tcomunicacion" color="danger" class="btn2" type="submit" expand="block">
+      <ion-icon name="ear-outline"></ion-icon> Comunicación y Colaboración         
+    </ion-button> 
+    
+    <ion-button [disabled]="isDisabled3" (click)="bCreacion(0)" [color]="myColorCr[0]" routerLink="/tcreacion" color="danger" class="btn2" type="submit" expand="block">
+      <ion-icon name="bulb-outline"></ion-icon> Creación de contenido Digital       
+    </ion-button> 
+
+    <ion-button [disabled]="isDisabled4" (click)="bSeguridad(0)" [color]="myColorS[0]" routerLink="/tseguridad" color="danger" class="btn2" type="submit" expand="block">
+      <ion-icon name="key-outline"></ion-icon> Seguridad      
+    </ion-button> 
+  
+    <ion-button [disabled]="isDisabled5" (click)="bResolver(0)" [color]="myColorR[0]" routerLink="/tresolver" color="danger" class="btn2" type="submit" expand="block">
+      <ion-icon name="ribbon-outline"></ion-icon> Resolución de Problemas     
+    </ion-button> 
+
+    <div style="text-align: center;">
+      <ion-button [disabled]="isDisabled6" (click)="bR(0)" [color]="myColorA[0]" style="text-align: center;" routerLink="/home"  color="secondary"> 
+        <ion-icon name="arrow-back-circle-outline"></ion-icon> Regresar  
+      </ion-button>
+
+    </div>
+   
+    
+  
+
+
+  </div>
+  
+
+</ion-content>

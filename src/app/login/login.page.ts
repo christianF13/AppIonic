@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
   doLogin()
   {
     this.authService.login(this.email, this.password).then( () =>{
-      this.router.navigate(['/home']);
+      this.router.navigate(['/slide']);
     }).catch(err => {
       alert('los datos son incorrectos o no existe el usuario');
     })

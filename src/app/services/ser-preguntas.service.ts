@@ -4,12 +4,19 @@ import { map } from "rxjs/operators";
 import { HttpClientModule } from '@angular/common/http';
 import { snapshotChanges } from '@angular/fire/database';
 
+
+
+
 export interface pregun{
   pregunta : string 
   opciones : string[]
   id : string
   respuesta : string
   point : string
+
+ 
+
+
 }
 
 @Injectable({
@@ -18,10 +25,30 @@ export interface pregun{
 export class SerPreguntasService {
 
   qns: any[];
+
+
+  filtrado: any[];
+
   seconds: number;
   timer;
   qnProgress: number;
   correctAnswerCount = 0;
+  nivele: string;
+  niveleG: string;
+  area: string;
+  promedio: number;
+  
+   //variables de visualizacion 
+   nivelAl:string
+   resultAl: number
+   nivelCo:string
+   resultCo: number
+   nivelCre:string
+   resultCre: number
+   nivelResol:string
+   resultResol: number
+   nivelSegu:string
+   resultSegu: number
 
   constructor( private db:AngularFirestore, private http: HttpClientModule) { }
 
@@ -39,15 +66,73 @@ export class SerPreguntasService {
     }))
   }
 
-
-
-  getRespuestas(){
-    var body = this.qns.map( x => x.id);
-    return this.db.collection('questions').snapshotChanges();
-    
+  getPreguntasCom(){
+    return this.db.collection('ComunicaciónYcolaboración').snapshotChanges().pipe(map(p =>{
+      return p.map(a=>{
+        const data = a.payload.doc.data() as pregun;
+        data.id = a.payload.doc.id;          
+        return data; 
+      })
+    }))
+  }
+ 
+  getPreguntasCre(){
+    return this.db.collection("CreacióndeContenido").snapshotChanges().pipe(map(p =>{
+      return p.map(a=>{
+        const data = a.payload.doc.data() as pregun;
+        data.id = a.payload.doc.id;          
+        return data; 
+      })
+    }))
   }
     
+   
+  getPreguntasSegu(){
+    return this.db.collection("Seguridad").snapshotChanges().pipe(map(p =>{
+      return p.map(a=>{
+        const data = a.payload.doc.data() as pregun;
+        data.id = a.payload.doc.id;          
+        return data; 
+      })
+    }))
+  }
+
+  getPreguntasResol(){
+    return this.db.collection("ResolverProblemas").snapshotChanges().pipe(map(p =>{
+      return p.map(a=>{
+        const data = a.payload.doc.data() as pregun;
+        data.id = a.payload.doc.id;          
+        return data; 
+      })
+    }))
+  }
   
+
+
+  //revisar consulta recuperar usuarios
+  getVisualizar(){
+    return this.db.collection('users').snapshotChanges().pipe(map (rooms =>{
+      return rooms.map(a=>{
+        const data = a.payload.doc.data() as pregun;
+        data.id = a.payload.doc.id;   
+        
+        return data
+        
+      })
+    }))
+
+  }
+
+
+ 
+
+
+  
+ 
+
+ 
+
+
 
    
 

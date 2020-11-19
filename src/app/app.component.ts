@@ -1,10 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, IonApp } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+
 import {timer}  from 'rxjs/observable/timer';
+import { app } from 'firebase';
 
 
 @Component({
@@ -15,14 +17,19 @@ import {timer}  from 'rxjs/observable/timer';
 export class AppComponent {
   
     showSplash = true;
+  subscription: any;
+   
    
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+   
   ) {
     this.initializeApp(); 
+   
+    
     
   }
 
@@ -31,10 +38,15 @@ export class AppComponent {
       this.statusBar.styleDefault(); 
       this.splashScreen.hide();
  
-      timer(5000).subscribe(()=> this.showSplash=false)
-  
+      timer(7000).subscribe(()=> this.showSplash=false)
+      
      
     
     });
   }
+
+  
+ 
+
+
 }

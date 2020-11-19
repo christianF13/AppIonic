@@ -17,4 +17,20 @@ import { HomePage } from './home.page';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule {
+
+  slides=[
+    {
+      img:'assets/img1.png',
+      titulo:'Visible changes<br> in 3 weeks'
+    },
+    {
+      img:'assets/img2.png',
+      titulo:'Forget  <br> in 3 weeks'
+    },
+    {
+      img:'assets/logo.png',
+      titulo:'Save  changes<br> in 3 weeks'
+    }
+  ]
+}

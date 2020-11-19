@@ -1,0 +1,39 @@
+ion-slide{
+    display: block;
+}
+
+
+.texto{   
+    color:white;
+
+}
+ 
+
+.slide-img-padding{
+    padding: 40px;
+    
+}
+
+img{
+    max-height: 400px;
+}
+
+
+
+h3{
+    font-size: 20px;
+    font-weight: inherit;
+    margin-bottom: 40px;
+}
+
+ion-slides{
+    --bullet-background: grey;
+    --bullet-background-active: rgb(255, 208, 0);
+
+}
+
+@media screen and (max-height: 775px){
+    img{
+        width: 70%;
+    }
+}

@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear" color="primary" (click)="Alerta()">
+      <ion-icon style="color: aliceblue;" name="information-circle-outline"></ion-icon>
+
+    </ion-button>
+    <ion-title style="text-align: center;">Reportes de Usuario </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p style="text-align: center;"> <b style="font-size:1.8em;">Reporte General </b> </p>
+
+ 
+  <ion-list class="" style="text-align: left">
+    <ion-searchbar showCancelbutton="focus" (ionInput)="filterList($event)"></ion-searchbar>
+    <ion-grid>
+      <ion-row class="ta" style="text-align: left;background:rgb(255, 204, 0);font-size:0.75em">
+        <ion-col>
+          <b> Nombres </b>
+        </ion-col>
+        <ion-col>
+          <b>Cedula</b>
+        </ion-col>
+        <ion-col>
+          <b>Nivel</b>
+        </ion-col>
+        <ion-col>
+          <b>Puntaje</b>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="tablaN" style="font-size:0.75em;" *ngFor="let foodItem of foodList">
+        <ion-col>
+          <b>{{ foodItem.name }} {{ foodItem.apellidos }}</b>
+        </ion-col>
+        <ion-col>
+          <b>{{ foodItem.cedula }}</b>
+        </ion-col>
+        <ion-col>
+          <b>{{ foodItem.promedio}}</b>
+        </ion-col>
+        <ion-col>
+          <b>{{ foodItem.nivelGe}}</b>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+ 
+  </ion-list>
+
+<ion-card> 
+  <ion-button color="secondary" class="ion-margin-top" type="submit" expand="block" (click)="generatePDF()"> Generar PDF
+  </ion-button>
+  <ion-button *ngIf="pdfObj" color="secondary" class="ion-margin-top" type="submit" expand="block" (click)="openPDF()">
+    Abrir PDF</ion-button>
+  </ion-card>
+
+  <p style="text-align: center;"> <b style="font-size:1.8em;">Reportes por Areas </b> </p>
+
+  <ion-card> 
+  <ion-button color="danger" class="ion-margin-top" routerLink="/reportalf" type="submit" expand="block">
+    <ion-icon name="school-outline"></ion-icon>Alfabetizacion e Información
+  </ion-button>
+  <ion-button color="danger" class="ion-margin-top" routerLink="/reportco" type="submit" expand="block">
+    <ion-icon name="ear-outline"></ion-icon>Comunicacion y Colaboración
+  </ion-button>
+  <ion-button color="danger" class="ion-margin-top" routerLink="/reportcre" type="submit" expand="block">
+    <ion-icon name="bulb-outline"></ion-icon>Creación de Contenido
+  </ion-button>
+  <ion-button color="danger" class="ion-margin-top" routerLink="/reportse" type="submit" expand="block">
+    <ion-icon name="key-outline"></ion-icon>Seguridad
+  </ion-button>
+  <ion-button color="danger" class="ion-margin-top" routerLink="/reportres" type="submit" expand="block">
+    <ion-icon name="ribbon-outline"></ion-icon>Resolver Problemas
+  </ion-button>
+
+</ion-card>
+
+<ion-card> 
+  <ion-button color="secondary"  class="ion-margin-top" routerLink="/home" type="submit" expand="block">
+    <ion-icon name="arrow-back-circle-outline"></ion-icon>Regresar
+  </ion-button>
+</ion-card>
+
+</ion-content>

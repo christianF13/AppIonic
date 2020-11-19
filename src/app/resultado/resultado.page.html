@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header >
   <ion-toolbar color="secondary">
     <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
       <ion-icon style="color: aliceblue;" name="menu"></ion-icon>
@@ -12,17 +12,23 @@
 </ion-header>
 
 <ion-content>
-  <img class="icon" src="assets/icon/result.png" style="width: 100px; height: 100;">
-  <div class="card-content">
-    <ion-item>
-      <ion-label>
-        <h4>{{SerPreg}}</h4>
-        <h4>{{SerPregun.correctAnswerCount}}/10</h4>
-      </ion-label>
-    </ion-item>
+  <br>
+  <img class="icon" src="assets/icon/result.png" style="width: 100px; height: 100;"> 
+    <div class="muestra">
+      <h4 class="container">      
+        {{SerPregun.correctAnswerCount}}/10
+      </h4>
+      <h2 style="text-align: center; color: rgb(2, 253, 44); size: 2rem; font-size: medium;">! TU NIVEL DE COMPETENCIA ES !</h2>
+      <h3 style="color: rgb(245, 220, 0);" class="conNivel">{{SerPregun.nivele}}</h3>
+          
+    </div>
 
 
-  </div>
+      <ion-button style="margin: 1rem; ;" routerLink="/areas" color="danger" class="ion-margin-top" type="submit" expand="block">
+        <ion-icon name="document-text-outline"></ion-icon> Enviar Test         
+      </ion-button>  
+
+    
 
 
 
